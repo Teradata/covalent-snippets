@@ -1,0 +1,493 @@
+{
+  "Nav Layout": {
+    "prefix": "covalent-layout-nav-view",
+    "body": [
+      "<td-layout #layout title=\"Sidenav Title\" logo=\"path/to/sidenav-logo.svg\">",
+      "\t<md-nav-list menu-items>",
+      "\t\t<a *ngFor=\"let item of routes\" md-list-item [routerLink]=\"[item.route]\" (click)=\"layout.close()\">",
+      "\t\t\t<md-icon md-list-icon>{{item.icon}}</md-icon>",
+      "\t\t\t{{item.title}}",
+      "\t\t</a>",
+      "\t</md-nav-list>",
+      "\t<td-layout-nav title=\"Toolbar Title\" logo=\"path/to/toolbar-logo.svg\">",
+      "\t\t<router-outlet></router-outlet>",
+      "\t</td-layout-nav>",
+      "</td-layout>"
+    ],
+    "description": "Nav View Layout"
+  },
+  "Nav List": {
+    "prefix": "covalent-layout-nav-list",
+    "body": [
+      "<td-layout #layout title=\"Sidenav Title\" logo=\"path/to/sidenav-logo.svg\">",
+      "\t<md-nav-list menu-items>",
+      "\t\t<a *ngFor=\"let item of routes\" md-list-item [routerLink]=\"[item.route]\" (click)=\"layout.close()\">",
+      "\t\t\t<md-icon>{{item.icon}}</md-icon>",
+      "\t\t\t{{item.title}}",
+      "\t\t</a>",
+      "\t</md-nav-list>",
+      "\t<td-layout-nav-list title=\"Toolbar Title\" logo=\"path/to/toolbar-logo.svg\">",
+      "\t\t<md-nav-list list-items>",
+      "\t\t\t<template let-item let-last=\"last\" ngFor [ngForOf]=\"items\">",
+      "\t\t\t\t<a md-list-item [routerLink]=\"[item.route]\">",
+      "\t\t\t\t\t<md-icon md-list-avatar>{{item.icon}}</md-icon>",
+      "\t\t\t\t\t<h3 md-line> {{item.title}} </h3>",
+      "\t\t\t\t\t<p md-line> {{item.description}} </p>",
+      "\t\t\t\t</a>",
+      "\t\t\t</template>",
+      "\t\t</md-nav-list>",
+      "\t\t<router-outlet></router-outlet>",
+      "\t</td-layout-nav-list>",
+      "</td-layout>"
+    ],
+    "description": "Nav List Layout"
+  },
+  "Card Over": {
+    "prefix": "covalent-layout-card-over",
+    "body": [
+      "<td-layout #layout title=\"Sidenav Title\" logo=\"path/to/sidenav-logo.svg\">",
+      "\t<md-nav-list menu-items>",
+      "\t\t<a *ngFor=\"let item of routes\" md-list-item [routerLink]=\"[item.route]\" (click)=\"layout.close()\">",
+      "\t\t\t<md-icon md-list-icon>{{item.icon}}</md-icon>",
+      "\t\t\t{{item.title}}",
+      "\t\t</a>",
+      "\t</md-nav-list>",
+      "\t<td-layout-nav title=\"Toolbar Title\" logo=\"path/to/toolbar-logo.svg\">",
+      "\t\t<td-layout-card-over title=\"Card Title\" subtitle=\"Card subtitle\">",
+      "\t\t\t<router-outlet></router-outlet>",
+      "\t\t</td-layout-card-over>",
+      "\t</td-layout-nav>",
+      "</td-layout>"
+    ],
+    "description": "Card Over Layout"
+  },
+  "Manage List": {
+    "prefix": "covalent-layout-manage-list",
+    "body": [
+      "<td-layout #layout title=\"Sidenav Title\" logo=\"path/to/sidenav-logo.svg\">",
+      "\t<md-nav-list menu-items>",
+      "\t\t<a *ngFor=\"let item of routes\" md-list-item [routerLink]=\"[item.route]\" (click)=\"layout.close()\">",
+      "\t\t\t<md-icon>{{item.icon}}</md-icon>",
+      "\t\t\t{{item.title}}",
+      "\t\t</a>",
+      "\t</md-nav-list>",
+      "\t<td-layout-nav title=\"Toolbar Title\" logo=\"path/to/toolbar-logo.svg\">",
+      "\t\t<td-layout-manage-list #list>",
+      "\t\t\t<md-nav-list list-items>",
+      "\t\t\t\t<template let-item let-last=\"last\" ngFor [ngForOf]=\"items\">",
+      "\t\t\t\t\t<a md-list-item [routerLink]=\"[item.route]\">",
+      "\t\t\t\t\t\t<md-icon md-list-avatar>{{item.icon}}</md-icon>",
+      "\t\t\t\t\t\t{{item.title}}",
+      "\t\t\t\t\t</a>",
+      "\t\t\t\t</template>",
+      "\t\t\t</md-nav-list>",
+      "\t\t\t<div toolbar-buttons layout=\"row\" layout-align=\"start center\" flex>",
+      "\t\t\t\t<span>Optional Toolbar Title</span>",
+      "\t\t\t\t<span flex></span>",
+      "\t\t\t\t<button md-icon-button><md-icon>more_vert</md-icon></button>",
+      "\t\t\t</div>",
+      "\t\t\t<router-outlet></router-outlet>",
+      "\t\t</td-layout-manage-list>",
+      "\t</td-layout-nav>",
+      "</td-layout>"
+    ],
+    "description": "Manage List Layout"
+  },
+  "Flex Row": {
+    "prefix": "covalent-row",
+    "body": [
+      "<div layout=\"row\">",
+      "\t<div flex=\"${width}\">",
+      "\t\t${first}",
+      "\t</div>",
+      "\t<div flex>",
+      "\t\t${second}",
+      "\t</div>",
+      "</div>"
+    ],
+    "description": "Flexbox horizontal row"
+  },
+  "Flex Row Responsive": {
+    "prefix": "covalent-row-responsive",
+    "body": [
+      "<div layout-gt-xs=\"row\">",
+      "\t<div flex-gt-xs=\"${width}\">",
+      "\t\t${first}",
+      "\t</div>",
+      "\t<div flex-gt-xs>",
+      "\t\t${second}",
+      "\t</div>",
+      "</div>"
+    ],
+    "description": "Flexbox collapsing row"
+  },
+  "Flex Column": {
+    "prefix": "covalent-column",
+    "body": [
+      "<div layout=\"column\">",
+      "\t<div flex=\"${width}\">",
+      "\t\t${first}",
+      "\t</div>",
+      "\t<div flex>",
+      "\t\t${second}",
+      "\t</div>",
+      "</div>"
+    ],
+    "description": "Flexbox vertical column"
+  },
+  "Stepper": {
+    "prefix": "covalent-stepper",
+    "body": [
+      "<td-steps>",
+      "\t<td-step label=\"${label}\" sublabel=\"${sublabel}\">",
+      "\t\t<template td-step-content>",
+      "\t\t\t${content}",
+      "\t\t</template>",
+      "\t\t<template td-step-actions>",
+      "\t\t\t<button md-raised-button color=\"accent\" (click)=\"step.close()\">Proceed</button>",
+      "\t\t\t<button md-raised-button (click)=\"step.close()\">Close</button>",
+      "\t\t</template>",
+      "\t\t<template td-step-summary>",
+      "\t\t\t<div class=\"md-padding\">",
+      "\t\t\t\t${summary}",
+      "\t\t\t</div>",
+      "\t\t</template>",
+      "\t</td-step>",
+      "\t<td-step label=\"${label2}\" sublabel=\"${sublabel2}\">",
+      "\t\t<template td-step-content>",
+      "\t\t\t${content2}",
+      "\t\t</template>",
+      "\t\t<template td-step-actions>",
+      "\t\t\t<button md-raised-button color=\"accent\" (click)=\"step.close()\">Proceed</button>",
+      "\t\t\t<button md-raised-button (click)=\"step.close()\">Close</button>",
+      "\t\t</template>",
+      "\t\t<template td-step-summary>",
+      "\t\t\t<div class=\"md-padding\">",
+      "\t\t\t\t${summary2}",
+      "\t\t\t</div>",
+      "\t\t</template>",
+      "\t</td-step>",
+      "</td-steps>"
+    ],
+    "description": "Stepper Component"
+  },
+  "Expansions": {
+    "prefix": "covalent-expansion",
+    "body": [
+      "<td-expansion-panel label=\"${label}\" sublabel=\"${sublabel}\">",
+      "\t<td-expansion-summary>",
+      "\t\t${summary}",
+      "\t</td-expansion-summary>",
+      "\t<div class=\"md-padding\">",
+      "\t\t${content}",
+      "\t</div>",
+      "</td-expansion-panel>"
+    ],
+    "description": "Expansion Panels Component"
+  },
+  "File Upload": {
+    "prefix": "covalent-file-upload",
+    "body": [
+      "<td-file-upload (upload)=\"uploadEvent($event)\" accept=\".jpg,.sql\" multiple>",
+      "</td-file-upload>"
+    ],
+    "description": "File Upload Component"
+  },
+  "Chips": {
+    "prefix": "covalent-chips",
+    "body": [
+      "<td-chips placeholder=\"Enter string\" [items]=\"items\" [(ngModel)]=\"model\" (add)=\"add($event)\" (remove)=\"remove($event)\" requireMatch>",
+      "</td-chips>"
+    ],
+    "description": "Chips/Autocomplete Component"
+  },
+  "Loading": {
+    "prefix": "covalent-loading",
+    "body": [
+      "<template tdLoading=\"stringName\" loadingType=\"circular\" loadingMode=\"indeterminate\">",
+      "</td-chips>"
+    ],
+    "description": "Loading Template"
+  },
+  "Data Table": {
+    "prefix": "covalent-datatable",
+    "body": [
+      "<td-data-table [data]=\"data\" [columns]=\"columns\" sortBy=\"age\" sortOrder=\"DESC\" pagination=\"true\" pageSize=\"10\" search=\"true\">",
+      "</td-data-table>"
+    ],
+    "description": "Data Table Component"
+  },
+  "Syntax Highlighting": {
+    "prefix": "covalent-syntax-highlighting",
+    "body": [
+      "<td-highlight lang=\"html\">",
+      "\t<![CDATA[",
+      "\t\t${code}",
+      "\t]]>",
+      "</td-highlight>"
+    ],
+    "description": "Syntax Highlighting Component"
+  },
+  "JSON Formatter": {
+    "prefix": "covalent-json-formatter",
+    "body": [
+      "<td-json-formatter [data]=\"object\" [levelsOpen]=\"3\">",
+      "</td-json-formatter>"
+    ],
+    "description": "JSON Formatter Component"
+  },
+  "Markdown": {
+    "prefix": "covalent-markdown",
+    "body": [
+      "<td-markdown>",
+      "\t<pre><code>",
+      "\t\t## ${markdown}",
+      "\t</code></pre>",
+      "</td-markdown>"
+    ],
+    "description": "Markdown Component"
+  },
+  "Line Chart": {
+    "prefix": "covalent-charts-line",
+    "body": [
+      "<td-charts title=\"Prices Trend\" [shadow]=\"true\" [margin]=\"{top: 60, bottom: 100}\">",
+      "\t<td-axis-x [link]=\"chartLine1\" [ticks]=\"true\" [show]=\"true\" [grid]=\"false\" legend=\"Year\"></td-axis-x>",
+      "\t<td-axis-y-left [link]=\"chartLine1\" [ticks]=\"true\" [show]=\"true\" [grid]=\"true\" legend=\"Prices($)\"></td-axis-y-left>",
+      "\t<td-chart-line #chartLine1 dataSrc=\"platform/charts/chart-line/datatime.csv\" timeSeries=\"true\" bottomAxis=\"date\" [columns]=\"['close']\" [titles]=\"['close']\" [colors]=\"['#E91E63']\" [transition]=\"true\" transitionDuration=\"500\" transitionDelay=\"1000\">",
+      "\t</td-chart-line>",
+      "</td-charts>"
+    ],
+    "description": "Line Chart Component"
+  },
+  "Sparkline Chart": {
+    "prefix": "covalent-charts-sparkline",
+    "body": [
+      "<td-charts title=\"Prices Trend\" [shadow]=\"true\" chartHeight=\"150\">",
+      "\t<td-axis-x [link]=\"chartLine2\" [show]=\"false\"></td-axis-x>",
+      "\t<td-chart-line #chartLine2 dataSrc=\"platform/charts/chart-line/datatime.csv\" timeSeries=\"true\" bottomAxis=\"date\" [columns]=\"['close']\" [titles]=\"['close']\" [colors]=\"['#00E676']\" [transition]=\"true\" transitionDuration=\"500\" transitionDelay=\"1000\">",
+      "\t</td-chart-line>",
+      "</td-charts>"
+    ],
+    "description": "Sparkline Chart Component"
+  },
+  "Bar Chart": {
+    "prefix": "covalent-charts-bar",
+    "body": [
+      "<td-charts title=\"Sales Bar Chart\" [shadow]=\"true\" fillOpacity=\"0.95\">",
+      "\t<td-axis-x [link]=\"chartBar1\" [ticks]=\"true\" [show]=\"true\" [grid]=\"true\"  legend=\"Day Offset\"></td-axis-x>",
+      "\t<td-axis-y-left [link]=\"chartBar1\" [show]=\"true\" [grid]=\"false\" legend=\"Sales\"></td-axis-y-left>",
+      "\t<td-chart-bar #chartBar1 [colors]=\"['pink', 'deepPurple']\"   [data]=\"jsonData\"   [padding]=\"0.1\"   bottomAxis=\"x\"   columns=\"y\"   [transition]=\"true\"   transitionDuration=\"1000\"   transitionDelay=\"3000\">",
+      "\t</td-chart-bar>",
+      "</td-charts>"
+    ],
+    "description": "Bar Chart Component"
+  },
+  "Multiline Chart": {
+    "prefix": "covalent-charts-multiline",
+    "body": [
+      "<td-charts title=\"Temperature Trend\" [shadow]=\"true\">",
+      "\t<td-axis-x [link]=\"chartLine3\" [ticks]=\"false\" [show]=\"true\" [grid]=\"false\" legend=\"Day Offset\"></td-axis-x>",
+      "\t<td-axis-y-left [link]=\"chartLine3\" [ticks]=\"true\" [show]=\"true\" [grid]=\"false\" legend=\"Temperature\"></td-axis-y-left>",
+      "\t<td-chart-line #chartLine3 dataSrc=\"platform/charts/chart-line/data.tsv\"  bottomAxis=\"col1\"  [columns]=\"['col2', 'col3','col4']\"  [titles]=\"['New York','San Francisco', 'Austin']\"  [colors]=\"['#304FFE', '#00B8D4', '#FF3D00']\"  [transition]=\"true\"  transitionDuration=\"1000\"  transitionDelay=\"2000\">",
+      "\t</td-chart-line>",
+      "</td-charts>"
+    ],
+    "description": "Multiline Chart Component"
+  },
+  "Area Chart": {
+    "prefix": "covalent-charts-area",
+    "body": [
+      "<td-charts title=\"Area Chart\" [shadow]=\"true\" fillOpacity=\"0.75\">",
+      "\t<td-axis-x [link]=\"chartArea1\" [ticks]=\"true\" [show]=\"true\" [grid]=\"false\" legend=\"X Axis\"></td-axis-x>",
+      "\t<td-axis-y-right [link]=\"chartArea1\" [ticks]=\"true\" [show]=\"true\" [grid]=\"true\" legend=\"Numbers\"></td-axis-y-right>",
+      "\t<td-chart-area #chartArea1 [colors]=\"['#03a9f4', '#0277bd']\"  dataSrc=\"platform/charts/chart-area/data.json\"  bottomAxis=\"x\"  columns=\"y\"  [transition]=\"true\"  transitionDuration=\"1500\"  transitionDelay=\"4000\">",
+      "\t</td-chart-area>",
+      "</td-charts>"
+    ],
+    "description": "Area Chart Component"
+  },
+  "Combo Chart": {
+    "prefix": "covalent-charts-combo",
+    "body": [
+      "<td-charts title=\"Sales Bar/Line Chart\" [shadow]=\"true\" fillOpacity=\"0.95\">",
+      "\t<td-axis-x [link]=\"chartLine4\" [ticks]=\"true\" [show]=\"true\" [grid]=\"false\" legend=\"Day Offset\"></td-axis-x>",
+      "\t<td-axis-y-left [link]=\"chartLine4\" [ticks]=\"true\" [show]=\"true\" [grid]=\"false\" legend=\"Sales\"></td-axis-y-left>",
+      "\t<td-axis-y-right [link]=\"chartBar2\" [ticks]=\"true\" [show]=\"true\" [grid]=\"true\" legend=\"Sales 2\"></td-axis-y-right>",
+      "\t<td-chart-bar #chartBar2 [colors]=\"['amber', 'orange']\" dataSrc=\"platform/charts/chart-line/datatime.csv\" [padding]=\"0.1\" bottomAxis=\"date\" columns=\"close\" titles=\"close\" [transition]=\"true\" transitionDuration=\"2050\" transitionDelay=\"5000\">",
+      "\t</td-chart-bar>",
+      "\t<td-chart-line #chartLine4 dataSrc=\"platform/charts/chart-line/datatime.csv\" timeSeries=\"true\" bottomAxis=\"date\" [columns]=\"['close']\" [titles]=\"['close']\" [colors]=\"['#03a9f4']\" [transition]=\"true\" transitionDuration=\"2000\" transitionDelay=\"5000\">",
+      "\t</td-chart-line>",
+      "</td-charts>"
+    ],
+    "description": "Combo Chart Component"
+  },
+  "Media Query": {
+    "prefix": "covalent-media-query",
+    "body": [
+      "<div tdMediaToggle=\"gt-xs\" [mediaClasses]=\"['classOne', 'classTwo']\" [mediaAttributes]=\"{title: 'tooltip'}\" [mediaStyles]=\"{color: 'red'}\">",
+      "</div>"
+    ],
+    "description": "Media Query Directive"
+  },
+  "Autotrim": {
+    "prefix": "covalent-autotrim",
+    "body": [
+      "<md-input tdAutoTrim placeholder=\"This will be autotrimmed\">",
+      "</md-input>"
+    ],
+    "description": "Autotrim Directive"
+  },
+  "Toggle": {
+    "prefix": "covalent-toggle",
+    "body": [
+      "<button md-raised-button color=\"accent\" (click)=\"toggle()\">Toggle</button>",
+      "<div [tdToggle]="toggleDiv" [hidden]>",
+      "\t${toggle}",
+      "</div>"
+    ],
+    "description": "Toggle Directive"
+  },
+  "Fade": {
+    "prefix": "covalent-fade",
+    "body": [
+      "<button md-raised-button color=\"accent\" (click)=\"fade()\">Fade</button>",
+      "<div [tdFade]="fadeDiv" [hidden]>",
+      "\t${fade}",
+      "</div>"
+    ],
+    "description": "Fade Directive"
+  },
+  "Numbers": {
+    "prefix": "covalent-number",
+    "body": [
+      "<md-input placeholder=\"CPUs\" #el=\"ngModel\" type=\"number\" [(ngModel)]=\"val\" min=\"5\" max=\"10\" required>",
+      "</md-input>"
+    ],
+    "description": "Numbers Directive"
+  },
+  "Digits": {
+    "prefix": "covalent-digits",
+    "body": [
+      "{{ item.value | digits }}"
+    ],
+    "description": "Digits Pipe"
+  },
+  "Bytes": {
+    "prefix": "covalent-bytes",
+    "body": [
+      "{{ item.value | bytes }}"
+    ],
+    "description": "Bytes Pipe"
+  },
+  "Time Ago": {
+    "prefix": "covalent-time-ago",
+    "body": [
+      "{{ item.date | timeAgo }}"
+    ],
+    "description": "Time Ago Pipe"
+  },
+  "Time Difference": {
+    "prefix": "covalent-time-difference",
+    "body": [
+      "{{ item.date | timeDifference }}"
+    ],
+    "description": "Time Difference Pipe"
+  },
+  "Truncate": {
+    "prefix": "covalent-truncate",
+    "body": [
+      "{{ item.text | truncate:40 }}"
+    ],
+    "description": "Truncate Pipe"
+  },
+  "Standard Card": {
+    "prefix": "covalent-card-standard",
+    "body": [
+      "<md-card>",
+      "\t<md-card-title>${title}</md-card-title>",
+      "\t<md-card-subtitle>${subtitle}</md-card-subtitle>",
+      "\t<md-divider></md-divider>",
+      "\t<md-card-content>",
+      "\t\t${content}",
+      "\t</md-card-content>",
+      "\t<md-divider></md-divider>",
+      "\t<md-card-actions>",
+      "\t\t<button md-button color=\"accent\">Action</button>",
+      "\t\t<button md-button>Cancel</button>",
+      "\t</md-card-actions>",
+      "</md-card>"
+    ],
+    "description": "Standard Card Pattern"
+  },
+  "Login Card": {
+    "prefix": "covalent-card-login",
+    "body": [
+      "<md-card>",
+      "\t<md-card-title layout=\"row\" layout-align=\"start end\"><md-icon class=\"md-icon-logo\" svgSrc=\"assets/icons/logo.svg\"></md-icon> <span class=\"md-app-title\">${title}</span></md-card-title>",
+      "\t<md-card-subtitle>sign in via your current corporate account</md-card-subtitle>",
+      "\t<md-divider></md-divider>",
+      "\t<md-card-content>",
+      "\t\t<form #loginForm=\"ngForm\" class=\"inset\">",
+      "\t\t\t<div layout=\"row\">",
+      "\t\t\t\t<md-input flex placeholder=\"Username\" type=\"text\" [(ngModel)]=\"username\" name=\"username\" required>",
+      "\t\t\t\t</md-input>",
+      "\t\t\t</div>",
+      "\t\t\t<div layout=\"row\">",
+      "\t\t\t\t<md-input (keyup.enter)=\"loginForm.form.valid && login()\" flex placeholder=\"Password\" type=\"password\" [(ngModel)]=\"password\" name=\"password\" required>",
+      "\t\t\t\t</md-input>",
+      "\t\t\t</div>",
+      "\t\t</form>",
+      "\t\t<div id=\"invalid-auth-msg\" *ngIf=\"invalidError\" class=\"tc-red-600 text-center\" flex>The username or password is incorrect. Please try again.</div>",
+      "\t</md-card-content>",
+      "\t<md-divider></md-divider>",
+      "\t<md-card-actions>",
+      "\t\t<button flex [disabled]=\"!loginForm.form.valid\" md-raised-button color=\"primary\" (click)=\"login()\">Sign In</button>",
+      "\t</md-card-actions>",
+      "</md-card>"
+    ],
+    "description": "Login Card Pattern"
+  },
+  "Metadata Card": {
+    "prefix": "covalent-card-metadata",
+    "body": [
+      "<md-card>",
+      "\t<md-card-title>${title}</md-card-title>",
+      "\t<md-card-subtitle>${subtitle}</md-card-subtitle>",
+      "\t<md-divider></md-divider>",
+      "\t<md-list>",
+      "\t\t<h3 md-subheader>Metadata</h3>",
+      "\t\t<md-list-item>",
+      "\t\t\t<md-icon md-list-avatar>account_box</md-icon>",
+      "\t\t\t<h4 md-line>John Jameson</h4>",
+      "\t\t\t<p md-line>Owner</p>",
+      "\t\t</md-list-item>",
+      "\t\t<md-divider md-inset></md-divider>",
+      "\t\t<md-list-item>",
+      "\t\t\t<md-icon md-list-avatar>description</md-icon>",
+      "\t\t\t<h4 md-line>An item description</h4>",
+      "\t\t\t<p md-line>Description</p>",
+      "\t\t</md-list-item>",
+      "\t\t<md-divider></md-divider>",
+      "\t\t<h3 md-subheader>Dates</h3>",
+      "\t\t<md-list-item>",
+      "\t\t\t<md-icon md-list-avatar>access_time</md-icon>",
+      "\t\t\t<h4 md-line>Wed, July 6, 2016 11:13 AM</h4>",
+      "\t\t\t<p md-line>Last Updated</p>",
+      "\t\t</md-list-item>",
+      "\t\t<md-divider md-inset></md-divider>",
+      "\t\t<md-list-item>",
+      "\t\t\t<md-icon md-list-avatar>today</md-icon>",
+      "\t\t\t<h4 md-line>Wed, July 4, 2016 09:11 AM</h4>",
+      "\t\t\t<p md-line>Created</p>",
+      "\t\t</md-list-item>",
+      "\t\t<md-divider md-inset></md-divider>",
+      "\t</md-list>",
+      "\t<md-divider></md-divider>",
+      "\t<md-card-actions>",
+      "\t\t<button md-button color=\"accent\">Edit</button>",
+      "\t</md-card-actions>",
+      "</md-card>"
+    ],
+    "description": "Metadata Card Pattern"
+  },
+}

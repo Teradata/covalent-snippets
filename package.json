@@ -1,0 +1,26 @@
+{
+    "name": "covalent-snippets",
+    "publisher": "Teradata",
+    "displayName": "Covalent Snippets",
+    "description": "Covalent Angular-Material2 HTML Snippets for VS Code",
+    "icon": "images/covalent.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Teradata/covalent-snippets.git"
+    },
+    "galleryBanner": {
+        "color": "#EF6C00",
+        "theme": "dark"
+    },
+    "version": "1.0.0",
+    "engines": { "vscode": "1.0.x" },
+    "categories": ["Snippets"],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "html",
+                "path": "./snippets/html.json"
+            }
+        ]
+    }
+}
