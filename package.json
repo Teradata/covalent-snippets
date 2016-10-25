@@ -1,6 +1,6 @@
 {
     "name": "covalent-snippets",
-    "publisher": "Teradata",
+    "publisher": "teradata-covalent",
     "displayName": "Covalent Snippets",
     "description": "Covalent Angular-Material2 HTML Snippets for VS Code",
     "icon": "images/covalent.png",
