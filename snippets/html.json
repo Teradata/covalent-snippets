@@ -332,8 +332,9 @@
   "Autotrim": {
     "prefix": "covalent-autotrim",
     "body": [
-      "<md-input tdAutoTrim placeholder=\"This will be autotrimmed\">",
-      "</md-input>"
+      "<md-input-container>",
+      "\t<input mdInput tdAutoTrim placeholder=\"This will be autotrimmed\">",
+      "</md-input-container>"
     ],
     "description": "Autotrim Directive"
   },
@@ -360,8 +361,9 @@
   "Numbers": {
     "prefix": "covalent-number",
     "body": [
-      "<md-input placeholder=\"CPUs\" #el=\"ngModel\" type=\"number\" [(ngModel)]=\"val\" min=\"5\" max=\"10\" required>",
-      "</md-input>"
+      "<md-input-container>"
+      "<\t<input mdInput placeholder=\"CPUs\" #el=\"ngModel\" type=\"number\" [(ngModel)]=\"val\" min=\"5\" max=\"10\" required>",
+      "</md-input-container>"
     ],
     "description": "Numbers Directive"
   },
@@ -423,18 +425,21 @@
     "prefix": "covalent-card-login",
     "body": [
       "<md-card>",
-      "\t<md-card-title layout=\"row\" layout-align=\"start end\"><md-icon class=\"md-icon-logo\" svgSrc=\"assets/icons/logo.svg\"></md-icon> <span class=\"md-app-title\">${title}</span></md-card-title>",
+      "<-- You must sanitize the svg url to for example assets/icons/logo.svg in the line below using bypassSecurityTrustUrl --> ",
+      "\t<md-card-title layout=\"row\" layout-align=\"start end\"><md-icon class=\"md-icon-logo\"></md-icon> <span class=\"md-app-title\">${title}</span></md-card-title>",
       "\t<md-card-subtitle>sign in via your current corporate account</md-card-subtitle>",
       "\t<md-divider></md-divider>",
       "\t<md-card-content>",
       "\t\t<form #loginForm=\"ngForm\" class=\"inset\">",
       "\t\t\t<div layout=\"row\">",
-      "\t\t\t\t<md-input flex placeholder=\"Username\" type=\"text\" [(ngModel)]=\"username\" name=\"username\" required>",
-      "\t\t\t\t</md-input>",
+      "\t\t\t\t<md-input-container>",
+      "\t\t\t\t\t<input mdInput flex placeholder=\"Username\" type=\"text\" [(ngModel)]=\"username\" name=\"username\" required>",
+      "\t\t\t\t</md-input-container>",
       "\t\t\t</div>",
       "\t\t\t<div layout=\"row\">",
-      "\t\t\t\t<md-input (keyup.enter)=\"loginForm.form.valid && login()\" flex placeholder=\"Password\" type=\"password\" [(ngModel)]=\"password\" name=\"password\" required>",
-      "\t\t\t\t</md-input>",
+      "\t\t\t\t<md-input-container>",
+      "\t\t\t\t\t<input mdInput (keyup.enter)=\"loginForm.form.valid && login()\" flex placeholder=\"Password\" type=\"password\" [(ngModel)]=\"password\" name=\"password\" required>",
+      "\t\t\t\t</md-input-container>",
       "\t\t\t</div>",
       "\t\t</form>",
       "\t\t<div id=\"invalid-auth-msg\" *ngIf=\"invalidError\" class=\"tc-red-600 text-center\" flex>The username or password is incorrect. Please try again.</div>",
